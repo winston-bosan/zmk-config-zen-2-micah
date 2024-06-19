@@ -29,6 +29,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        lock {
+            bindings = <&tog 4>;
+            key-positions = <24 0 5 38>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -90,6 +99,15 @@
 &trans  &trans  &trans  &trans  &sys_reset  &bootloader    &bootloader  &trans  &trans  &trans  &kp PRINTSCREEN  &kp F12
 &trans  &trans  &trans  &trans  &trans      &trans         &trans       &trans  &trans  &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
                         &trans  &trans      &trans         &trans       &trans  &trans
+            >;
+        };
+
+        locked {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
