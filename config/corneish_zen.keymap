@@ -76,7 +76,7 @@
         };
 
         open {
-            display-name = "SYMBOL";
+            display-name = "LSYMBOL";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
@@ -93,6 +93,8 @@
         };
 
         close {
+            display-name = "RSYMBOL";
+
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp RIGHT_PARENTHESIS  &kp RBKT       &kp RIGHT_BRACE  &kp GREATER_THAN  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp ASTERISK           &kp PAGE_UP    &kp PLUS         &kp BACKSLASH     &trans  &trans
@@ -102,11 +104,13 @@
         };
 
         mouse {
+            display-name = "MOUSE";
+
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp UP  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans  &trans
+                        &trans  &trans  &trans    &mkp LCLK       &mkp RCLK       &trans
             >;
         };
 
