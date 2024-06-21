@@ -29,6 +29,69 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+
+        paren: paren {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PAREN";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        bracket: bracket {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BRACKET";
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        brace: brace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BRACE";
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ranglelangle: ranglelangle {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RANGLELANGLE";
+            bindings = <&kp LESS_THAN>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        refderef: refderef {
+            compatible = "zmk,behavior-mod-morph";
+            label = "REFDEREF";
+            bindings = <&kp AMPS>, <&kp ASTERISK>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        slash: slash {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SLASH";
+            bindings = <&kp SLASH>, <&kp BACKSLASH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        plusminus: plusminus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PLUSMINUS";
+            bindings = <&kp PLUS>, <&kp MINUS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -54,10 +117,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q  &kp W           &kp E             &kp R             &kp T                 &kp Y                &kp U              &kp I             &kp O                   &kp P      &kp BSPC
-&kp LEFT_GUI  &kp A  &mt LEFT_ALT S  &mt LEFT_META D   &mt LEFT_SHIFT F  &mt LEFT_CONTROL G    &mt RIGHT_CONTROL H  &mt RIGHT_SHIFT J  &mt RIGHT_META K  &mt RIGHT_ALT UP_ARROW  &kp L      &kp SQT
-&td0          &kp Z  &kp X           &kp C             &kp V             &kp B                 &kp N                &kp M              &kp LEFT          &kp DOWN                &kp RIGHT  &kp ESC
-                                     &kp LEFT_CONTROL  &mo 4             &lt 2 SPACE           &lt 3 ENTER          &mo 1              &kp RALT
+&kp TAB       &kp Q  &kp W           &kp E            &kp R             &kp T                 &kp Y                &kp U              &kp I             &kp O                   &kp P      &kp BSPC
+&kp LEFT_GUI  &kp A  &mt LEFT_ALT S  &mt LEFT_META D  &mt LEFT_SHIFT F  &mt LEFT_CONTROL G    &mt RIGHT_CONTROL H  &mt RIGHT_SHIFT J  &mt RIGHT_META K  &mt RIGHT_ALT UP_ARROW  &kp L      &kp SQT
+&td0          &kp Z  &kp X           &kp C            &kp V             &kp B                 &kp N                &kp M              &kp LEFT          &kp DOWN                &kp RIGHT  &kp ESC
+                                     &lt 3 UNDER      &lt 2 TAB         &lt 1 SPACE           &lt 1 ENTER          &lt 2 PERIOD       &lt 3 COMMA
             >;
         };
 
@@ -88,10 +151,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH  &kp DLLR        &kp PRCNT    &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LESS_THAN  &trans  &kp BSPC
-&trans  &kp GRAVE     &kp TILDE     &kp PIPE  &kp UNDERSCORE  &kp EQUAL    &kp AMPERSAND         &kp UP            &kp MINUS       &kp SLASH      &trans  &trans
-&trans  &out OUT_USB  &out OUT_BLE  &none     &none           &none        &kp LEFT              &kp DOWN          &kp RIGHT       &trans         &trans  &trans
-                                    &trans    &trans          &kp SPACE    &kp RET               &trans            &trans
+&trans  &kp EXCL      &kp AT        &kp HASH  &kp DLLR        &kp PRCNT    &paren     &bracket  &brace      &ranglelangle  &trans  &kp BSPC
+&trans  &kp GRAVE     &kp TILDE     &kp PIPE  &kp UNDERSCORE  &kp EQUAL    &refderef  &slash    &plusminus  &kp SLASH      &trans  &trans
+&trans  &out OUT_USB  &out OUT_BLE  &none     &none           &none        &kp LEFT   &kp DOWN  &kp RIGHT   &trans         &trans  &trans
+                                    &trans    &trans          &kp SPACE    &kp RET    &trans    &trans
             >;
         };
 
