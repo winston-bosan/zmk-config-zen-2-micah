@@ -92,15 +92,55 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        mod_paren: mod_paren {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_PAREN";
+            bindings = <&kp>, <&paren>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+
+        mod_brace: mod_brace {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_BRACE";
+            bindings = <&kp>, <&brace>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+
+        mod_bracket: mod_bracket {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_BRACKET";
+            bindings = <&kp>, <&bracket>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+
+        mod_ranglelangle: mod_ranglelangle {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_RANGLELANGLE";
+            bindings = <&kp>, <&ranglelangle>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
         lock {
-            bindings = <&tog 6>;
+            bindings = <&tog 5>;
             key-positions = <24 0 5 38>;
-            layers = <0 6>;
+            layers = <0 5>;
         };
     };
 
@@ -134,15 +174,15 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &kp N0  &kp N1  &kp N2  &kp N3    &trans                &trans             &trans                &trans  &trans  &trans
-&trans  &trans  &trans  &kp N4  &kp N5  &kp N6    &kp C_MUTE            &kp C_VOLUME_UP    &trans                &trans  &trans  &trans
-&trans  &trans  &trans  &kp N7  &kp N8  &kp N9    &kp C_BRIGHTNESS_DEC  &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_INC  &trans  &trans  &trans
-                        &trans  &trans  &trans    &kp INS               &kp DEL            &trans
+&trans  &trans  &kp N0  &kp N1                  &kp N2                    &kp N3                       &trans                    &trans                    &trans                &trans                 &trans  &trans
+&trans  &trans  &trans  &mt LEFT_META NUMBER_4  &mt RIGHT_SHIFT NUMBER_5  &mt LEFT_CONTROL NUMBER_6    &mt C_MUTE RIGHT_CONTROL  &mt RIGHT_SHIFT C_VOL_UP  &trans                &mt RIGHT_ALT PAGE_UP  &trans  &trans
+&trans  &trans  &trans  &kp N7                  &kp N8                    &kp N9                       &kp C_BRIGHTNESS_DEC      &kp C_VOLUME_DOWN         &kp C_BRIGHTNESS_INC  &kp PAGE_DOWN          &trans  &trans
+                        &trans                  &trans                    &trans                       &kp INS                   &kp DEL                   &trans
             >;
         };
 
-        open {
-            display-name = "LSYMBOL";
+        symbol {
+            display-name = "SYMBOL";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
@@ -151,20 +191,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL      &kp AT        &kp HASH  &kp DLLR        &kp PRCNT    &paren     &bracket  &brace      &ranglelangle  &trans  &kp BSPC
-&trans  &kp GRAVE     &kp TILDE     &kp PIPE  &kp UNDERSCORE  &kp EQUAL    &refderef  &slash    &plusminus  &kp SLASH      &trans  &trans
-&trans  &out OUT_USB  &out OUT_BLE  &none     &none           &none        &kp LEFT   &kp DOWN  &kp RIGHT   &trans         &trans  &trans
-                                    &trans    &trans          &kp SPACE    &kp RET    &trans    &trans
-            >;
-        };
-
-        close {
-            display-name = "RSYMBOL";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp RIGHT_PARENTHESIS  &kp RBKT       &kp RIGHT_BRACE  &kp GREATER_THAN  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp ASTERISK           &kp PAGE_UP    &kp PLUS         &kp BACKSLASH     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME               &kp PAGE_DOWN  &kp END          &trans            &trans  &trans
-                        &trans  &trans  &trans    &trans                 &trans         &trans
+&trans  &kp EXCL   &kp AT              &kp HASH            &kp DLLR                 &kp PRCNT                 &refderef                   &slash                      &plusminus               &trans                         &trans  &kp BSPC
+&trans  &kp GRAVE  &mt LEFT_ALT TILDE  &mt LEFT_META PIPE  &mt LEFT_SHIFT QUESTION  &mt LEFT_CONTROL EQUAL    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &trans  &trans
+&trans  &trans     &trans              &none               &none                    &none                     &trans                      &trans                      &trans                   &trans                         &trans  &trans
+                                       &trans              &trans                   &trans                    &trans                      &trans                      &trans
             >;
         };
 
@@ -203,7 +233,7 @@
 
         twothree {
             if-layers = <1 2>;
-            then-layer = <5>;
+            then-layer = <4>;
         };
     };
 };
