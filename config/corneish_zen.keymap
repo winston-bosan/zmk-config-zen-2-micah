@@ -174,8 +174,8 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &kp N0  &kp N1                  &kp N2                    &kp N3                       &trans                    &trans                    &trans                &trans                 &trans  &trans
-&trans  &trans  &trans  &mt LEFT_META NUMBER_4  &mt RIGHT_SHIFT NUMBER_5  &mt LEFT_CONTROL NUMBER_6    &mt C_MUTE RIGHT_CONTROL  &mt RIGHT_SHIFT C_VOL_UP  &trans                &mt RIGHT_ALT PAGE_UP  &trans  &trans
+&trans  &trans  &kp N0  &kp N1                  &kp N2                    &kp N3                       &refderef                   &slash                      &plusminus               &trans                         &trans  &kp BSPC
+&trans  &trans  &trans  &mt LEFT_META NUMBER_4  &mt RIGHT_SHIFT NUMBER_5  &mt LEFT_CONTROL NUMBER_6    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &trans  &trans
 &trans  &trans  &trans  &kp N7                  &kp N8                    &kp N9                       &kp C_BRIGHTNESS_DEC      &kp C_VOLUME_DOWN         &kp C_BRIGHTNESS_INC  &kp PAGE_DOWN          &trans  &trans
                         &trans                  &trans                    &trans                       &kp INS                   &kp DEL                   &trans
             >;
