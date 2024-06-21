@@ -27,7 +27,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD0";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+            bindings = <&kp INS>, <&kp CAPS>;
         };
 
         paren: paren {
@@ -138,9 +138,9 @@
         compatible = "zmk,combos";
 
         lock {
-            bindings = <&tog 5>;
+            bindings = <&tog 4>;
             key-positions = <24 0 5 38>;
-            layers = <0 5>;
+            layers = <0 4>;
         };
     };
 
@@ -157,10 +157,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q  &kp W           &kp E            &kp R             &kp T                 &kp Y                &kp U              &kp I             &kp O                   &kp P      &kp BSPC
-&kp LEFT_GUI  &kp A  &mt LEFT_ALT S  &mt LEFT_META D  &mt LEFT_SHIFT F  &mt LEFT_CONTROL G    &mt RIGHT_CONTROL H  &mt RIGHT_SHIFT J  &mt RIGHT_META K  &mt RIGHT_ALT UP_ARROW  &kp L      &kp SQT
-&td0          &kp Z  &kp X           &kp C            &kp V             &kp B                 &kp N                &kp M              &kp LEFT          &kp DOWN                &kp RIGHT  &kp ESC
-                                     &lt 3 UNDER      &lt 2 TAB         &lt 1 SPACE           &lt 1 ENTER          &lt 2 PERIOD       &lt 3 COMMA
+&kp ESCAPE  &kp Q  &kp W           &kp E            &kp R             &kp T                 &kp Y                &kp U              &kp I             &kp O                   &kp P      &kp DEL
+&kp APOS    &kp A  &mt LEFT_ALT S  &mt LEFT_META D  &mt LEFT_SHIFT F  &mt LEFT_CONTROL G    &mt RIGHT_CONTROL H  &mt RIGHT_SHIFT J  &mt RIGHT_META K  &mt RIGHT_ALT UP_ARROW  &kp L      &kp BACKSPACE
+&td0        &kp Z  &kp X           &kp C            &kp V             &kp B                 &kp N                &kp M              &kp LEFT          &kp DOWN                &kp RIGHT  &kp SEMI
+                                   &lt 3 UNDER      &lt 2 TAB         &lt 1 SPACE           &lt 1 ENTER          &lt 2 PERIOD       &lt 3 COMMA
             >;
         };
 
@@ -174,47 +174,30 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &kp N0  &kp N1                  &kp N2                    &kp N3                       &refderef                   &slash                      &plusminus               &trans                         &trans  &kp BSPC
-&trans  &trans  &trans  &mt LEFT_META NUMBER_4  &mt RIGHT_SHIFT NUMBER_5  &mt LEFT_CONTROL NUMBER_6    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &trans  &trans
-&trans  &trans  &trans  &kp N7                  &kp N8                    &kp N9                       &kp C_BRIGHTNESS_DEC      &kp C_VOLUME_DOWN         &kp C_BRIGHTNESS_INC  &kp PAGE_DOWN          &trans  &trans
-                        &trans                  &trans                    &trans                       &kp INS                   &kp DEL                   &trans
-            >;
-        };
-
-        symbol {
-            display-name = "SYMBOL";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            bindings = <
-&trans  &kp EXCL   &kp AT              &kp HASH            &kp DLLR                 &kp PRCNT                 &refderef                   &slash                      &plusminus               &trans                         &trans  &kp BSPC
-&trans  &kp GRAVE  &mt LEFT_ALT TILDE  &mt LEFT_META PIPE  &mt LEFT_SHIFT QUESTION  &mt LEFT_CONTROL EQUAL    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &trans  &trans
-&trans  &trans     &trans              &none               &none                    &none                     &trans                      &trans                      &trans                   &trans                         &trans  &trans
-                                       &trans              &trans                   &trans                    &trans                      &trans                      &trans
+&trans  &trans  &kp N0        &kp N1                  &kp N2                    &kp N3                       &refderef                   &slash                      &plusminus               &kp PIPE                       &trans       &trans
+&trans  &trans  &kp GRAVE     &mt LEFT_META NUMBER_4  &mt RIGHT_SHIFT NUMBER_5  &mt LEFT_CONTROL NUMBER_6    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &kp EQUAL    &trans
+&trans  &trans  &kp QUESTION  &kp N7                  &kp N8                    &kp N9                       &kp EXCL                    &kp AT                      &kp HASH                 &kp DOLLAR                     &kp PERCENT  &trans
+                              &trans                  &trans                    &trans                       &trans                      &trans                      &trans
             >;
         };
 
         mouse {
             display-name = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans  &trans
-                        &trans  &trans  &trans    &mkp LCLK       &mkp RCLK       &trans
+&trans  &trans  &trans  &trans  &trans  &kp INSERT    &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &trans         &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &kp PAGE_UP    &kp HOME  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp PAGE_DOWN  &kp END   &trans
+                        &trans  &trans  &trans        &mkp LCLK       &mkp RCLK       &trans
             >;
         };
 
-        layer_3 {
+        fn {
             display-name = "Fn";
             bindings = <
-&trans           &kp F1        &kp F2        &kp F3  &kp F4      &kp F5         &kp F6       &kp F7  &kp F8  &kp F9  &kp F10          &kp F11
-&rgb_ug RGB_TOG  &out OUT_TOG  &bt BT_CLR    &trans  &sys_reset  &bootloader    &bootloader  &trans  &trans  &trans  &kp PRINTSCREEN  &kp F12
-&rgb_ug RGB_EFF  &bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans      &trans         &trans       &trans  &trans  &trans  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                             &trans  &trans      &trans         &trans       &trans  &trans
+&trans           &kp F1        &kp F2        &kp F3  &kp F4      &kp F5         &kp F6       &kp F7           &kp F8           &kp F9                &kp F10          &kp F11
+&rgb_ug RGB_TOG  &out OUT_TOG  &bt BT_CLR    &trans  &sys_reset  &bootloader    &bootloader  &rgb_ug RGB_BRI  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_INC  &kp PRINTSCREEN  &kp F12
+&rgb_ug RGB_EFF  &bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans      &trans         &trans       &rgb_ug RGB_BRD  &kp C_VOL_DN     &kp C_BRIGHTNESS_DEC  &kp SCROLLLOCK   &kp PAUSE_BREAK
+                                             &trans  &trans      &trans         &trans       &trans           &trans
             >;
         };
 
@@ -228,12 +211,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        twothree {
-            if-layers = <1 2>;
-            then-layer = <4>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
