@@ -100,7 +100,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
         };
 
         mod_brace: mod_brace {
@@ -110,7 +110,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
         };
 
         mod_bracket: mod_bracket {
@@ -120,7 +120,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
         };
 
         mod_ranglelangle: mod_ranglelangle {
@@ -130,7 +130,17 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
+        };
+
+        cmt: cmt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Custom Mod Tap";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -157,10 +167,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q  &kp W           &kp E            &kp R             &kp T                 &kp Y                &kp U              &kp I             &kp O                   &kp P      &kp DEL
-&kp APOS    &kp A  &mt LEFT_ALT S  &mt LEFT_META D  &mt LEFT_SHIFT F  &mt LEFT_CONTROL G    &mt RIGHT_CONTROL H  &mt RIGHT_SHIFT J  &mt RIGHT_META K  &mt RIGHT_ALT UP_ARROW  &kp L      &kp BACKSPACE
-&td0        &kp Z  &kp X           &kp C            &kp V             &kp B                 &kp N                &kp M              &kp LEFT          &kp DOWN                &kp RIGHT  &kp SEMI
-                                   &lt 3 UNDER      &lt 2 TAB         &lt 1 SPACE           &lt 1 ENTER          &lt 2 PERIOD       &lt 3 COMMA
+&kp ESCAPE  &kp Q  &kp W            &kp E             &kp R              &kp T                  &kp Y                 &kp U               &kp I              &kp O                    &kp P      &kp DEL
+&kp APOS    &kp A  &cmt LEFT_ALT S  &cmt LEFT_META D  &cmt LEFT_SHIFT F  &cmt LEFT_CONTROL G    &cmt RIGHT_CONTROL H  &cmt RIGHT_SHIFT J  &cmt RIGHT_META K  &cmt RIGHT_ALT UP_ARROW  &kp L      &kp BACKSPACE
+&td0        &kp Z  &kp X            &kp C             &kp V              &kp B                  &kp N                 &kp M               &kp LEFT           &kp DOWN                 &kp RIGHT  &kp SEMI
+                                    &lt 3 UNDER       &lt 2 TAB          &lt 1 SPACE            &lt 1 ENTER           &lt 2 PERIOD        &lt 3 COMMA
             >;
         };
 
@@ -174,10 +184,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &kp N0        &kp N1                  &kp N2                    &kp N3                       &refderef                   &slash                      &plusminus               &kp PIPE                       &trans       &trans
-&trans  &trans  &kp GRAVE     &mt LEFT_META NUMBER_4  &mt RIGHT_SHIFT NUMBER_5  &mt LEFT_CONTROL NUMBER_6    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &kp EQUAL    &trans
-&trans  &trans  &kp QUESTION  &kp N7                  &kp N8                    &kp N9                       &kp EXCL                    &kp AT                      &kp HASH                 &kp DOLLAR                     &kp PERCENT  &trans
-                              &trans                  &trans                    &trans                       &trans                      &trans                      &trans
+&trans  &trans  &kp N0               &kp N1                   &kp N2                     &kp N3                        &refderef                   &slash                      &plusminus               &kp PIPE                       &trans       &trans
+&trans  &trans  &cmt LEFT_ALT GRAVE  &cmt LEFT_META NUMBER_4  &cmt RIGHT_SHIFT NUMBER_5  &cmt LEFT_CONTROL NUMBER_6    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &kp EQUAL    &trans
+&trans  &trans  &kp QUESTION         &kp N7                   &kp N8                     &kp N9                        &kp EXCL                    &kp AT                      &kp HASH                 &kp DOLLAR                     &kp PERCENT  &trans
+                                     &trans                   &trans                     &trans                        &trans                      &trans                      &trans
             >;
         };
 
