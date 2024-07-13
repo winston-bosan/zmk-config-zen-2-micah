@@ -10,8 +10,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/rgb.h>
 
 / {
     chosen {
@@ -158,17 +156,17 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            display-name = "QWERTY";
+            display-name = "Colemak";
             bindings = <
-&kp LEFT_META   &kp Q  &kp W  &kp F     &kp P        &kp G            &kp J                      &kp L        &kp U      &kp Y    &kp SEMICOLON  &kp BACKSLASH
-&kp LEFT_SHIFT  &kp A  &kp R  &kp S     &kp T        &kp D            &kp H                      &kp N        &kp E      &kp I    &kp O          &kp SQT
-&kp LEFT_ALT    &kp Z  &kp X  &kp C     &kp V        &kp B            &kp K                      &kp M        &kp COMMA  &kp DOT  &kp FSLH       &kp ESC
-                              &kp LGUI  &lt 1 ENTER  &mt LCTRL TAB    &mt RIGHT_SHIFT BACKSPACE  &lt 2 SPACE  &kp RALT
+&kp LEFT_META   &kp Q  &kp W  &kp F     &kp P        &kp G            &kp J                      &kp L        &kp U                                   &kp Y    &kp SEMICOLON       &kp BACKSLASH
+&kp LEFT_SHIFT  &kp A  &kp R  &kp S     &kp T        &kp D            &kp H                      &kp N        &kp E                                   &kp I    &kp O               &kp SQT
+&kp LEFT_ALT    &kp Z  &kp X  &kp C     &kp V        &kp B            &kp K                      &kp M        &kp COMMA                               &kp DOT  &mt RIGHT_ALT FSLH  &kp ESC
+                              &kp LGUI  &lt 1 ENTER  &mt LCTRL TAB    &mt RIGHT_SHIFT BACKSPACE  &lt 2 SPACE  &lt 3 C_AC_NEXT_KEYBOARD_LAYOUT_SELECT
             >;
         };
 
-        number {
-            display-name = "NUMBER";
+        sym {
+            display-name = "Symbol";
             bindings = <
 &trans  &trans  &kp N0               &kp N1                   &kp N2                     &kp N3                        &refderef                   &slash                      &plusminus               &kp PIPE                       &trans       &trans
 &trans  &trans  &cmt LEFT_ALT GRAVE  &cmt LEFT_META NUMBER_4  &cmt RIGHT_SHIFT NUMBER_5  &cmt LEFT_CONTROL NUMBER_6    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &kp EQUAL    &trans
@@ -180,20 +178,20 @@
         mouse {
             display-name = "MVMENT";
             bindings = <
-&trans  &trans  &mkp LCLK       &mmv MOVE_UP    &mkp RCLK        &msc SCRL_UP      &trans     &trans     &trans  &trans  &trans  &trans
-&trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN    &trans     &trans     &trans  &trans  &trans  &trans
-&trans  &trans  &trans          &trans          &trans           &trans            &trans     &trans     &trans  &trans  &trans  &trans
-                                &trans          &trans           &trans            &mkp LCLK  &mkp RCLK  &trans
+&trans  &trans  &mkp LCLK         &mmv MOVE_UP    &mkp RCLK          &msc SCRL_UP      &kp PG_UP      &kp HOME         &kp UP       &kp END    &trans  &trans
+&trans  &trans  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &msc SCRL_DOWN    &kp PAGE_DOWN  &kp LEFT         &kp DOWN     &kp RIGHT  &trans  &trans
+&trans  &trans  &msc SCROLL_LEFT  &trans          &msc SCROLL_RIGHT  &trans            &trans         &kp LS(LC(TAB))  &kp LC(TAB)  &trans     &trans  &trans
+                                  &trans          &trans             &trans            &trans         &trans           &trans
             >;
         };
 
         fn {
             display-name = "Fn";
             bindings = <
-&trans           &kp F1        &kp F2        &kp F3  &kp F4      &kp F5         &kp F6       &kp F7           &kp F8           &kp F9                &kp F10          &kp F11
-&rgb_ug RGB_TOG  &out OUT_TOG  &bt BT_CLR    &trans  &sys_reset  &bootloader    &bootloader  &rgb_ug RGB_BRI  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_INC  &kp PRINTSCREEN  &kp F12
-&rgb_ug RGB_EFF  &bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans      &trans         &trans       &rgb_ug RGB_BRD  &kp C_VOL_DN     &kp C_BRIGHTNESS_DEC  &kp SCROLLLOCK   &kp PAUSE_BREAK
-                                             &trans  &trans      &trans         &trans       &trans           &trans
+&trans  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5        &kp F6       &kp F7      &kp F8           &kp F9                &kp F10          &kp F11
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5        &bootloader  &kp K_MUTE  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_INC  &kp PRINTSCREEN  &kp F12
+&trans  &kp NUMBER_6  &kp N7        &kp N8        &kp N9        &kp N0        &trans       &trans      &kp C_VOL_DN     &kp C_BRIGHTNESS_DEC  &kp SCROLLLOCK   &kp PAUSE_BREAK
+                                    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR    &trans       &trans      &trans
             >;
         };
 
