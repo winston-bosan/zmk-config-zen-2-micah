@@ -161,12 +161,6 @@
         default_layer {
             display-name = "QWERTY";
 
-            // --------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
             bindings = <
 &kp LEFT_META   &kp Q  &kp W  &kp F     &kp P        &kp G            &kp J                      &kp L        &kp U      &kp Y    &kp SEMICOLON  &kp BACKSLASH
 &kp LEFT_SHIFT  &kp A  &kp R  &kp S     &kp T        &kp D            &kp H                      &kp N        &kp E      &kp I    &kp O          &kp SQT
@@ -178,12 +172,6 @@
         number {
             display-name = "NUMBER";
 
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
             bindings = <
 &trans  &trans  &kp N0               &kp N1                   &kp N2                     &kp N3                        &refderef                   &slash                      &plusminus               &kp PIPE                       &trans       &trans
 &trans  &trans  &cmt LEFT_ALT GRAVE  &cmt LEFT_META NUMBER_4  &cmt RIGHT_SHIFT NUMBER_5  &cmt LEFT_CONTROL NUMBER_6    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &kp EQUAL    &trans
@@ -193,11 +181,11 @@
         };
 
         mouse {
-            display-name = "MOUSE";
+            display-name = "MVMENT";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &kp INSERT    &msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &trans         &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &msc SCRL_UP    &mmv MOVE_UP    &msc SCRL_DOWN   &kp PAGE_UP    &kp HOME  &trans
-&trans  &trans  &trans  &trans  &trans  &trans        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp PAGE_DOWN  &kp END   &trans
+&msc SCRL_LEFT  &trans          &msc SCRL_RIGHT  &mmv MOVE_UP   &trans          &msc SCRL_UP        &trans  &trans  &trans  &trans  &trans  &trans        
+&msc SCRL_UP    &mmv MOVE_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN      &trans  &trans  &trans  &trans  &trans  &trans        
+&mmv MOVE_LEFT  &msc SCRL_LEFT  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  &kp END         &trans        &trans  &trans  &trans  &trans  &trans  &trans        
                         &trans  &trans  &trans        &mkp LCLK       &mkp RCLK       &trans
             >;
         };
