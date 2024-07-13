@@ -158,21 +158,22 @@
         default_layer {
             display-name = "Colemak";
             bindings = <
-&kp LEFT_META   &kp Q  &kp W  &kp F     &kp P        &kp G            &kp J                      &kp L        &kp U                                   &kp Y    &kp SEMICOLON       &kp BACKSLASH
+&kp ESC         &kp Q  &kp W  &kp F     &kp P        &kp G            &kp J                      &kp L        &kp U                                   &kp Y    &kp SEMICOLON       &kp BACKSLASH
 &kp LEFT_SHIFT  &kp A  &kp R  &kp S     &kp T        &kp D            &kp H                      &kp N        &kp E                                   &kp I    &kp O               &kp SQT
-&kp LEFT_ALT    &kp Z  &kp X  &kp C     &kp V        &kp B            &kp K                      &kp M        &kp COMMA                               &kp DOT  &mt RIGHT_ALT FSLH  &kp ESC
+&kp LEFT_ALT    &kp Z  &kp X  &kp C     &kp V        &kp B            &kp K                      &kp M        &kp COMMA                               &kp DOT  &mt RIGHT_ALT FSLH  &sl 4
                               &kp LGUI  &lt 1 ENTER  &mt LCTRL TAB    &mt RIGHT_SHIFT BACKSPACE  &lt 2 SPACE  &lt 3 C_AC_NEXT_KEYBOARD_LAYOUT_SELECT
             >;
         };
 
-        sym {
-            display-name = "Symbol";
+        Symbol {
             bindings = <
-&trans  &trans  &kp N0               &kp N1                   &kp N2                     &kp N3                        &refderef                   &slash                      &plusminus               &kp PIPE                       &trans       &trans
-&trans  &trans  &cmt LEFT_ALT GRAVE  &cmt LEFT_META NUMBER_4  &cmt RIGHT_SHIFT NUMBER_5  &cmt LEFT_CONTROL NUMBER_6    &mod_paren RIGHT_CONTROL 0  &mod_bracket RIGHT_SHIFT 0  &mod_brace RIGHT_META 0  &mod_ranglelangle RIGHT_ALT 0  &kp EQUAL    &trans
-&trans  &trans  &kp QUESTION         &kp N7                   &kp N8                     &kp N9                        &kp EXCL                    &kp AT                      &kp HASH                 &kp DOLLAR                     &kp PERCENT  &trans
-                                     &trans                   &trans                     &trans                        &trans                      &trans                      &trans
+&trans  &kp LS(EXCL)   &kp LS(LT)  &kp LS(GT)  &kp LS(LPAR)  &kp LS(RPAR)    &kp LS(AT)  &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PRCNT)  &trans    &trans
+&trans  &kp LS(CARET)  &kp LBKT    &kp RBKT    &kp LS(LBRC)  &kp LS(RBRC)    &trans      &kp EQUAL      &kp LS(PLUS)  &trans         &trans    &trans
+&trans  &trans         &trans      &trans      &trans        &trans          &trans      &kp LS(TILDE)  &kp MINUS     &kp FSLH       &kp BSLH  &trans
+                                   &trans      &trans        &trans          &trans      &trans         &trans
             >;
+
+            label = "Symbol";
         };
 
         mouse {
@@ -195,13 +196,15 @@
             >;
         };
 
-        locked {
+        Gaming {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                     &none  &none  &none    &none  &none  &none
+&kp ESC    &kp Q  &kp W  &kp E     &kp R      &kp T      &none  &none  &none  &none  &none  &none
+&kp LSHFT  &kp A  &kp S  &kp D     &kp F      &kp G      &none  &none  &none  &none  &none  &none
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V      &kp B      &none  &none  &none  &none  &none  &none
+                         &kp LGUI  &kp SPACE  &kp TAB    &none  &none  &none
             >;
+
+            label = "GG";
         };
     };
 
