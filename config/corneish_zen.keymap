@@ -158,7 +158,7 @@
         default_layer {
             display-name = "Colemak";
             bindings = <
-&kp ESC         &kp Q  &kp W  &kp F     &kp P        &kp G            &kp J                      &kp L        &kp U                                   &kp Y    &kp SEMICOLON       &mt BACKSPACE BACKSLASH
+&kp ESC         &kp Q  &kp W  &kp F     &kp P        &kp G            &kp J                      &kp L        &kp U                                   &kp Y    &kp SEMICOLON       &mt BACKSPACE MINUS
 &kp LEFT_SHIFT  &kp A  &kp R  &kp S     &kp T        &kp D            &kp H                      &kp N        &kp E                                   &kp I    &kp O               &kp SQT
 &kp LEFT_ALT    &kp Z  &kp X  &kp C     &kp V        &kp B            &kp K                      &kp M        &kp COMMA                               &kp DOT  &mt RIGHT_ALT FSLH  &tog 4
                               &kp LGUI  &lt 1 ENTER  &mt LCTRL TAB    &mt RIGHT_SHIFT BACKSPACE  &lt 2 SPACE  &lt 3 C_AC_NEXT_KEYBOARD_LAYOUT_SELECT
@@ -167,10 +167,10 @@
 
         Symbol {
             bindings = <
-&trans  &kp LS(EXCL)   &kp LS(LT)  &kp LS(GT)  &kp LS(LPAR)  &kp LS(RPAR)    &kp LS(AT)  &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PRCNT)  &trans    &trans
-&trans  &kp LS(CARET)  &kp LBKT    &kp RBKT    &kp LS(LBRC)  &kp LS(RBRC)    &trans      &kp EQUAL      &kp LS(PLUS)  &trans         &trans    &trans
-&trans  &trans         &trans      &trans      &trans        &trans          &trans      &kp LS(TILDE)  &kp MINUS     &kp FSLH       &kp BSLH  &trans
-                                   &trans      &trans        &trans          &trans      &trans         &trans
+&kp GRAVE  &kp LS(EXCL)   &kp LS(LT)  &kp LS(GT)  &kp LS(LPAR)  &kp LS(RPAR)    &kp LS(AT)  &kp LS(AMPS)   &kp LS(STAR)  &kp LS(PRCNT)  &trans    &kp MINUS
+&trans     &kp LS(CARET)  &kp LBKT    &kp RBKT    &kp LS(LBRC)  &kp LS(RBRC)    &trans      &kp EQUAL      &kp LS(PLUS)  &trans         &trans    &trans
+&trans     &trans         &trans      &trans      &trans        &trans          &trans      &kp LS(TILDE)  &kp MINUS     &kp FSLH       &kp BSLH  &trans
+                                      &trans      &trans        &trans          &trans      &trans         &trans
             >;
 
             label = "Symbol";
